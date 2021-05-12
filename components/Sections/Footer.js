@@ -141,25 +141,15 @@ const Footer = () => {
                                         </li>
                                         <li>
                                             <a href="#">
-                                            Entretien des jardins
+                                            Eclairage Historique
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                Irrigation Et Drainage
+                                                Projecteurs
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#">
-                                                
-                                                Entretien de la pelouse et du jardin
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                            Plantation et enlèvement
-                                            </a>
-                                        </li>
+                                       
                                     </List>
                                 </LinksWidget>
                             </Col>

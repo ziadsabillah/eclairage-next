@@ -28,6 +28,28 @@ const Button = styled.a`
     }
 `;
 
+const StyledFade = styled(Fade)`
+    .default-nav {
+        background: transparent;
+        svg {
+            fill: #ffffff;
+        }
+
+        &:hover {
+            background: transparent;
+            svg {
+                fill: yellow;
+            }
+        }
+
+        &:focus {
+            background: transparent;
+        }
+    }
+
+
+`;
+
 
 export default function Hero() {
 
@@ -51,7 +73,7 @@ export default function Hero() {
 
     return (
         <>
-            <Fade className="slider-wrapper">
+            <StyledFade className="slider-wrapper">
                 {
                     slides.map((slide, index) =>
                         <div key={index}
@@ -83,7 +105,7 @@ export default function Hero() {
                         </div>
                     )
                 }
-            </Fade>
+            </StyledFade>
             
         </>
     )
