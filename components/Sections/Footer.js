@@ -1,6 +1,10 @@
+import { Col, Row } from 'react-bootstrap';
 import styled from 'styled-components'
 import AutoContainer from '../AutoContainer';
-import { Column3, ListStyleOne, Row } from '../General'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
 
 const MainFooter = styled.footer`
     background-image: url('/img/6.jpeg');
@@ -35,6 +39,8 @@ const LogoWidget = styled.div`
 const Logo = styled.div`
     position: relative;
     margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 2em;
 `;
 
 const Text = styled.div`
@@ -66,7 +72,7 @@ const LinksHeader = styled.h2`
         bottom: 0px;
         width: 100%;
         height: 1px;
-        background-color: #62BE1E;
+        background-color: #F7BD00;
 
         @media (max-width: 400px) {
             display: none;
@@ -78,13 +84,14 @@ const LinksHeader = styled.h2`
 
 const List = styled.ul`
     position: relative;
-
+    padding: 0;
     li, a {
         position: relative;
         margin-bottom: 8px;
         color: #cccc;
         font-size: 15px;
         transition: all 0.3s ease;
+        text-decoration: none;
      
         
         &:hover {
@@ -93,17 +100,15 @@ const List = styled.ul`
         
     }
 
-    li {
-        padding-left: 10px;
-
-        &::before {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            content: '-';
-            line-height: 1.2em;
-        }
+    svg {
+        font-size: 2em;
+        text-align: center;
     }
+`;
+
+const IconWrapper = styled.li`
+    text-align: center;
+    margin-bottom: 2em !important;
 `;
 
 
@@ -115,17 +120,15 @@ const Footer = () => {
                 <AutoContainer>
                     <MiddleSection>
                         <Row className="clearfix">
-                            <Column3>
+                            <Col sm={12} md={3}>
                                 <LogoWidget>
                                     <Logo>
-                                        <img src="/img/logo.png" alt="logo" />
+                                        GMRENLIGHTS SARL.
                                     </Logo>
-                                    <Text>
-                                        Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sed do iusmod tempor incididunt ut labore et.
-                                    </Text>
+                                    
                                 </LogoWidget>
-                            </Column3>
-                            <Column3>
+                            </Col>
+                            <Col sm={12} md={3}>
                                 <LinksWidget>
                                     <LinksHeader>
                                         Services
@@ -133,7 +136,7 @@ const Footer = () => {
                                     <List>
                                         <li>
                                             <a href="/">
-                                            Taille des Arbres et Arbustes 
+                                            Eclairage Urbain
                                             </a>
                                         </li>
                                         <li>
@@ -159,8 +162,8 @@ const Footer = () => {
                                         </li>
                                     </List>
                                 </LinksWidget>
-                            </Column3>
-                            <Column3>
+                            </Col>
+                            <Col sm={12} md={3}>
                                 <LinksWidget>
                                     <LinksHeader>
                                         Contact
@@ -180,7 +183,20 @@ const Footer = () => {
                                         </li>
                                     </List>
                                 </LinksWidget>
-                            </Column3>
+                            </Col>
+                            <Col sm={12} md={3}>
+                                <LinksWidget>
+                                    <LinksHeader>
+                                        Réseaux Sociaux
+                                    </LinksHeader>
+                                    <LinksWidget>
+                                        <List>
+                                            <IconWrapper><FontAwesomeIcon icon={faFacebook} /></IconWrapper>
+                                            <IconWrapper><FontAwesomeIcon icon={faInstagram} /></IconWrapper>
+                                        </List>
+                                    </LinksWidget>
+                                </LinksWidget>
+                            </Col>
                         </Row>
                     </MiddleSection>
                 </AutoContainer>
