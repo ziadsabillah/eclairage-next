@@ -1,7 +1,10 @@
 import { Col, Row } from "react-bootstrap"
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+
+import { Fade } from 'react-slideshow-image'
+
 
 
 const ContentWrapper = styled.div`
@@ -9,22 +12,24 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
-    padding: 3em;
+    justify-content: center;
+    padding: 2em;
 
 `;
 
 const Title = styled.div`
     text-align: left;
-    
+    position: relative;
+    h1 {
+        margin-bottom: 2em;
+    }
     h1::after {
         position: absolute;
         content: '';
         border-bottom: 2px solid #E6E97F;
-        bottom: 214px;
-        left: 10%;
-        
-        width: 50%;
+        bottom: 30%;
+        left: 0;
+        width: 100%;
         
     }
 `;
@@ -72,63 +77,106 @@ const Button = styled.a`
 
 const Image = styled.img`
     width: 100%;
-    height: 100%;
+    max-height: 400px;
     border: none;
+`;
+
+const StyledFade = styled(Fade)`
+    .default-nav {
+        background: transparent;
+        svg {
+            fill: #fff !important;
+        }
+    }
+
+  
+    .default-nav:hover {
+        background: transparent;
+        svg {
+            color: #CDD400;
+        }
+    }
+    .default-nav:focus {
+        background: transparent;
+        svg {
+            color: #CDD400;
+        }
+    }
 `;
 
 
 
-const ImageSide = ({src}) => {
+const ImageSide = ({ src }) => {
+
     return (
-                        <Image src={src} layout="fill" />
+        <StyledFade>
+            {src.map((imgSrc, index) => (
+                <Image key={index} src={imgSrc} layout="fill" />
+            ) )}
+        </StyledFade>
     )
 }
 
-const ContentSide = ({titleOne, titleTwo, paragraph, href}) => {
+const ContentSide = ({ titleOne, titleTwo, paragraph, href }) => {
     return (
-                <ContentWrapper>
-                    <Title>
-                        <h1>
-                            {titleOne}
-                            <br />
-                            {titleTwo}
-                        </h1>
-                    </Title>
-                    <Paragraph>
-                        <p>
-                        {paragraph}
-                        </p>
-                    </Paragraph>
-                    <ButtonWrapper>
-                        <Button href={href}>SAVOIR PLUS <FontAwesomeIcon icon={faArrowRight} className="icon"></FontAwesomeIcon></Button>
-                    </ButtonWrapper>
-                </ContentWrapper>
+        <ContentWrapper>
+            <Title>
+                <h1>
+                    {titleOne}
+                    <br />
+                    {titleTwo}
+                </h1>
+            </Title>
+            <Paragraph>
+                <p>
+                    {paragraph}
+                </p>
+            </Paragraph>
+            <ButtonWrapper>
+                <Button href={href}>SAVOIR PLUS <FontAwesomeIcon icon={faArrowRight} className="icon"></FontAwesomeIcon></Button>
+            </ButtonWrapper>
+        </ContentWrapper>
     )
 }
+
+const RowStyled = styled(Row)`
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+
+    margin-right: 0;
+    margin-left: 0;
+
+`;
+
+const ColStyled = styled(Col)`
+    padding-left: 0;
+    padding-right: 0;
+`;
 const Showcase = (
-    {side, titleOne, titleTwo, imgPath, paragraph, href}
-    ) => {
+    { side, titleOne, titleTwo, imgPath, paragraph, href }
+) => {
     return (
         <>
-            <Row>
-                <Col sm={12} md={side === 0 ? 7 : 4}>
-                    {side === 0 ? (<ImageSide src={imgPath} />) : (<ContentSide 
-                    
-                        titleOne={titleOne}
-                        titleTwo={titleTwo}
-                        paragraph={paragraph}
-                        href={href}  />)}
-                </Col>
-                <Col sm={12} md={side === 1 ? 4 : 7}>
-                    {side === 1 ? (<ImageSide src={imgPath} />) : (<ContentSide titleOne={titleOne}
-                        titleTwo={titleTwo}
-                        imgPath={imgPath}
-                        paragraph={paragraph}
-                        href={href}/>)}
-                </Col>
-            </Row>
+                <RowStyled>
+                    <ColStyled md={side === 0 ? 7 : 5}>
+                        {side === 0 ? (<ImageSide src={imgPath} />) : (<ContentSide
 
-        
+                            titleOne={titleOne}
+                            titleTwo={titleTwo}
+                            paragraph={paragraph}
+                            href={href} />)}
+                    </ColStyled>
+                    <ColStyled md={side === 0 ? 5 : 7}>
+                        {side === 0 ?(<ContentSide titleOne={titleOne}
+                            titleTwo={titleTwo}
+                            imgPath={imgPath}
+                            paragraph={paragraph}
+                            href={href} />) : (<ImageSide src={imgPath} />)}
+                    </ColStyled>
+                </RowStyled>
+
 
         </>
     )
