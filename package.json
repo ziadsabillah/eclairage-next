@@ -1,0 +1,34 @@
+{
+  "name": "eclairage-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "bootstrap": "^5.0.0",
+    "framer-motion": "^4.1.10",
+    "gsap": "^3.6.1",
+    "next": "10.2.0",
+    "next-videos": "^1.4.0",
+    "react": "17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "17.0.2",
+    "react-isotope": "^1.0.7",
+    "react-multi-carousel": "^2.6.2",
+    "react-player": "^2.9.0",
+    "react-responsive": "^8.2.0",
+    "react-responsive-masonry": "^2.1.2",
+    "react-slideshow-image": "^3.4.6",
+    "styled-components": "^5.2.3"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.12.0"
+  }
+}
