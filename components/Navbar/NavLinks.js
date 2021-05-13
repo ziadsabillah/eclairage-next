@@ -60,7 +60,7 @@ const NavLinks = () => {
             <LinksWrapper>
                 <DetectActive href="/" pageName="Accueil" />
                 
-                <DetectActive href="/about" pageName="A propos" />
+                <DetectActive href="/about" pageName="Qui sommes-nous" />
 
                 <DetectActive href="/products" pageName="Produits" />
 

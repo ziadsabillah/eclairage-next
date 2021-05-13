@@ -82,15 +82,15 @@ const MobileNavLinks = () => {
             <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
             {isOpen &&
             <LinksWrapper>
-                <DetectActive href="/" pageName="Accueil" />
+                <DetectActive href="/about" pageName="Qui sommes-nous" />
                 
-                <DetectActive href="/about" pageName="A propos" />
+                <DetectActive href="/products" pageName="Produits" />
 
                 <DetectActive href="/projects" pageName="Projets" />
 
-                <DetectActive href="/services" pageName="Services" />
+                <DetectActive href="/ref" pageName="Références" />
 
-                <DetectActive href="/pricing" pageName="Pricing" />
+                <DetectActive href="/advantages" pageName="Avantages" />
 
                 <DetectActive href="/contact" pageName="Contact" />
 
