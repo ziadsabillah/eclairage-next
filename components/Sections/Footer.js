@@ -111,6 +111,30 @@ const IconWrapper = styled.li`
     margin-bottom: 2em !important;
 `;
 
+const Callbar = styled.div`
+    position: fixed;
+    bottom: 0px;
+    background: #000;
+    z-index: 999999 !important;
+    text-align: center;
+    line-height: 1.7em;
+    font-size: 21px;
+    width: 100%;
+    color: #fff;
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            color: #cdd400 !important;
+            text-decoration: none;
+            font-weight: 300;
+            display: flex;
+            align-items: center
+        }
+    }
+`;
+
 
 
 const Footer = () => {
@@ -190,6 +214,18 @@ const Footer = () => {
                         </Row>
                     </MiddleSection>
                 </AutoContainer>
+                <Callbar>
+                    <p>
+                        <a>
+                            <img src="/icons/ico-mobile.png" alt />
+                        </a>
+                        <a href="/"  style={{ marginTop: '6px', marginLeft: '6px' }}>Nous appeler</a>
+                        <img style={{ marginLeft: '40px' }} src="/icons/ico-mail.png" alt />
+                        <a href='/contact' style={{ marginTop: '6px', marginLeft: '6px'  }}>
+                             Nous écrire 
+                        </a>
+                    </p>
+                </Callbar>
             </MainFooter>
         </>
     )
