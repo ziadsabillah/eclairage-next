@@ -220,7 +220,7 @@ const Footer = () => {
                             <img src="/icons/ico-mobile.png" alt />
                         </a>
                         <a href="/"  style={{ marginTop: '6px', marginLeft: '6px' }}>Nous appeler</a>
-                        <img style={{ marginLeft: '40px' }} src="/icons/ico-mail.png" alt />
+                        <img style={{ marginLeft: '40px' }} src="/icons/ico-mail.png" alt="Icon" />
                         <a href='/contact' style={{ marginTop: '6px', marginLeft: '6px'  }}>
                              Nous écrire 
                         </a>
