@@ -160,15 +160,14 @@ const Showcase = (
     return (
         <>
                 <RowStyled>
-                    <ColStyled md={side === 0 ? 7 : 5}>
+                    <ColStyled xs={{ order: side === 0 ? 2 : 1 }} md={side === 0 ? 7 : 5}>
                         {side === 0 ? (<ImageSide src={imgPath} />) : (<ContentSide
-
                             titleOne={titleOne}
                             titleTwo={titleTwo}
                             paragraph={paragraph}
                             href={href} />)}
                     </ColStyled>
-                    <ColStyled md={side === 0 ? 5 : 7}>
+                    <ColStyled xs={{ order: side === 0 ? 1 : 2 }} md={side === 0 ? 5 : 7}>
                         {side === 0 ?(<ContentSide titleOne={titleOne}
                             titleTwo={titleTwo}
                             imgPath={imgPath}
