@@ -112,7 +112,7 @@ const ImageSide = ({ src }) => {
         <StyledFade>
             {src.map((imgSrc, index) => (
                 <Image key={index} src={imgSrc} layout="fill" />
-            ) )}
+            ))}
         </StyledFade>
     )
 }
@@ -159,22 +159,20 @@ const Showcase = (
 ) => {
     return (
         <>
-                <RowStyled>
-                    <ColStyled xs={{ order: side === 0 ? 2 : 1 }} md={side === 0 ? 7 : 5}>
-                        {side === 0 ? (<ImageSide src={imgPath} />) : (<ContentSide
-                            titleOne={titleOne}
-                            titleTwo={titleTwo}
-                            paragraph={paragraph}
-                            href={href} />)}
-                    </ColStyled>
-                    <ColStyled xs={{ order: side === 0 ? 1 : 2 }} md={side === 0 ? 5 : 7}>
-                        {side === 0 ?(<ContentSide titleOne={titleOne}
-                            titleTwo={titleTwo}
-                            imgPath={imgPath}
-                            paragraph={paragraph}
-                            href={href} />) : (<ImageSide src={imgPath} />)}
-                    </ColStyled>
-                </RowStyled>
+            <RowStyled>
+                <ColStyled md={{ order: side === 0 ? "first" : "last" }} lg={{ order : side === 0 ? "last" : "first" }} md={7}>
+                    <ImageSide src={imgPath} />
+                </ColStyled>
+                <ColStyled md={{ order: side === 0 ? "last" : "first" }} lg={{ order : side === 0 ? "first" : "last" }} md={5}>
+                    <ContentSide titleOne={titleOne}
+                        titleTwo={titleTwo}
+                        imgPath={imgPath}
+                        paragraph={paragraph}
+                        href={href} />
+                </ColStyled>
+
+
+            </RowStyled>
 
 
         </>
