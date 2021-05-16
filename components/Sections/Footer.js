@@ -29,6 +29,10 @@ const MiddleSection = styled.div`
     position: relative;
     padding-top: 45px;
     padding-bottom: 40px;
+    text-align: center; 
+    @media (min-width: 768px) {
+        text-align: left;
+    }
 `;
 
 const LogoWidget = styled.div`
@@ -64,7 +68,7 @@ const LinksHeader = styled.h2`
     margin-bottom: 25px;
     padding-bottom: 20px;
     text-transform: capitalize;
-
+    
     &::after {
         position: absolute;
         content: '';
