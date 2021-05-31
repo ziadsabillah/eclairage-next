@@ -57,6 +57,8 @@ const GalleryTextInner = styled.div`
 
 
 
+
+
 const AboutCard = ({ title, imgUrl, description }) => {
     return (
         <>
@@ -68,6 +70,9 @@ const AboutCard = ({ title, imgUrl, description }) => {
             <GalleryText>
                 <GalleryTextInner>
                     <h2>{title}</h2>
+                    <p>
+                        <img src="/icons/linea-txt.png" alt="Seperator" />
+                    </p>
                     <p>
                         {description}
                     </p>
