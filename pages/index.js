@@ -5,7 +5,6 @@ import Showcase from '../components/CategoryCard/Showcase'
 import Contact from '../components/Contact'
 
 
-
 export default function Home() {
   const  showcasedata = [
     {
