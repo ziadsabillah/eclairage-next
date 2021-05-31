@@ -9,11 +9,8 @@ const CustomCol = styled(Col)`
 `
 
 export default function RefPage() {
-
-
     return (
         <>
-
             <Layout title="References">
                 <Banner title="Références" />
                 <Container>
