@@ -6,6 +6,7 @@ import Youtube from 'react-youtube';
 const RowBlackBackground = styled(Row)`
     background-color: #000;
     padding-top: 150px;
+    width: 100%;
 `
 
 const ContentSide = styled(Col)`
@@ -35,15 +36,15 @@ const EntryContent = ({ title, videoUrl }) => {
         <>
             <RowBlackBackground>
 
-                <ContentSide sm={12} md={4}>
+                <ContentSide sm={12} md={6}>
                     <Text>
                         <h1>
                             {title}
                         </h1>
                     </Text>
                 </ContentSide>
-                <Col sm={12} md={8}>
-                    <iframe width="95%" height="315" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+                <Col sm={12} md={6}>
+                    <iframe width="80%" height="315" src={videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
                 </Col>
 
             </RowBlackBackground>
