@@ -37,13 +37,10 @@ export default function AboutPage() {
                         <Col md={6}>
                             <Text>
                                 Le meilleur design italien, les hautes performances d’éclairage et l’attention portée à la durabilité environnementale caractérisent chacun de nos produits ; le soin particulier apporté à la qualité de la construction garantit la durabilité et un faible entretien.
-
-
-                        </Text>
+                            </Text>
                         </Col>
                     </Row>
                 </AutoContainer>
-
                 <Contact />
 
             </Layout>
