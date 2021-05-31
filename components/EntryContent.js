@@ -35,7 +35,6 @@ const EntryContent = ({ title, videoUrl }) => {
     return (
         <>
             <RowBlackBackground>
-
                 <ContentSide sm={12} md={6}>
                     <Text>
                         <h1>

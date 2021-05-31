@@ -62,8 +62,6 @@ const NavLinks = () => {
                 
                 <DetectActive href="/about" pageName="Qui sommes-nous" />
 
-                <DetectActive href="/products" pageName="Produits" />
-
                 <DetectActive href="/advantages" pageName="Avantages" />
 
                 <DetectActive href="/ref" pageName="References" />
