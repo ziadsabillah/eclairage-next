@@ -5,6 +5,10 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import { Fade } from 'react-slideshow-image'
 
+import { motion } from 'framer-motion';
+
+import { InView } from 'react-intersection-observer';
+
 
 
 const ContentWrapper = styled.div`
@@ -13,13 +17,12 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 2em;
-
 `;
 
 const Title = styled.div`
     text-align: left;
     position: relative;
+    margin: 1em;
     h1 {
         margin-bottom: 2em;
     }
@@ -36,12 +39,14 @@ const Title = styled.div`
 
 const Paragraph = styled.div`
     position: relative;
-    margin-top: 4em;
+    margin-top: 1em;
+    padding: 1em;
 `;
 
 const ButtonWrapper = styled.div`
     position: relative;
     width: 100%;
+    text-align: center;
 `;
 
 const Button = styled.a`
@@ -119,23 +124,32 @@ const ImageSide = ({ src }) => {
 
 const ContentSide = ({ titleOne, titleTwo, paragraph, href }) => {
     return (
-        <ContentWrapper>
-            <Title>
-                <h1>
-                    {titleOne}
-                    <br />
-                    {titleTwo}
-                </h1>
-            </Title>
-            <Paragraph>
-                <p>
-                    {paragraph}
-                </p>
-            </Paragraph>
-            <ButtonWrapper>
-                <Button href={href}>SAVOIR PLUS <FontAwesomeIcon icon={faArrowRight} className="icon"></FontAwesomeIcon></Button>
-            </ButtonWrapper>
-        </ContentWrapper>
+        <InView threshold={0.75}>
+            {({ ref, inView }) => (
+                <motion.div ref={ref} initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1} : { opacity: 0}}
+                    transition={{ duration: 0.8 }}>
+                    <ContentWrapper>
+                        <Title>
+                            <h1>
+                                {titleOne}
+                                <br />
+                                {titleTwo}
+                            </h1>
+                        </Title>
+                        <Paragraph>
+                            <p>
+                                {paragraph}
+                            </p>
+                        </Paragraph>
+                        <ButtonWrapper>
+                            <Button href={href}>SAVOIR PLUS <FontAwesomeIcon icon={faArrowRight} className="icon"></FontAwesomeIcon></Button>
+                        </ButtonWrapper>
+                    </ContentWrapper>
+                </motion.div>
+            )}
+        </InView>
+
     )
 }
 
@@ -160,10 +174,10 @@ const Showcase = (
     return (
         <>
             <RowStyled>
-                <ColStyled md={{ order: side === 0 ? "first" : "last" }} lg={{ order : side === 0 ? "last" : "first" }} md={7}>
+                <ColStyled md={{ order: side === 0 ? "first" : "last" }} lg={{ order: side === 0 ? "last" : "first" }} md={7}>
                     <ImageSide src={imgPath} />
                 </ColStyled>
-                <ColStyled md={{ order: side === 0 ? "last" : "first" }} lg={{ order : side === 0 ? "first" : "last" }} md={5}>
+                <ColStyled md={{ order: side === 0 ? "last" : "first" }} lg={{ order: side === 0 ? "first" : "last" }} md={5}>
                     <ContentSide titleOne={titleOne}
                         titleTwo={titleTwo}
                         imgPath={imgPath}
