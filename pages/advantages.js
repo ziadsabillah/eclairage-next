@@ -5,6 +5,12 @@ import AdvantagesCard from '../components/CategoryCard/AdvantagesCard'
 import Layout from '../components/Layout'
 
 
+
+const CustomRow = styled(Row)`
+    width: 100%;
+
+`;
+
 export default function AdvantagesPage() {
 
     const advantages = [
@@ -38,14 +44,14 @@ export default function AdvantagesPage() {
         <>
             <Layout title="Avantages">
                 <Banner title="Avantages" />
-                <Row>
+                <CustomRow>
                     {advantages?.map((adv) => (
 
                         <Col sm={12} md={4}>
                             <AdvantagesCard title={adv.title} imgUrl={adv.imgUrl} description={adv.description} />
                         </Col>
                     ))}
-                </Row>
+                </CustomRow>
             </Layout>
         </>
     )
