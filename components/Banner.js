@@ -12,6 +12,7 @@ const Wrapper = styled.div`
     }
     h1 {
         font-size: calc(36px + 1vw) !important;
+        font-family: 'Roboto', sans-serif;
         font-weight: lighter;
         line-height: calc(30px + 1vw);
         color: #fff !important;

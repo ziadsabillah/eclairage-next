@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 
+@font-face {
+  font-family: 'Roboto';
+  src: url("/fonts/Roboto/Roboto-Light.ttf");
+  font-style: normal;
+  font-weight: lighter;
+  font-display: swap;
+}
+
 html,
 body {
   padding: 0;
