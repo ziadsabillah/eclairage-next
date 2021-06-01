@@ -10,6 +10,7 @@ import AboutCard from "../components/CategoryCard/AboutCard";
 
 import { motion } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
+import Banner from "../components/Banner";
 
 
 const StyledText = styled(Text)`
@@ -75,7 +76,7 @@ export default function AboutPage() {
         <>
 
             <Layout title="Qui sommes nous?">
-                <EntryContent title="Fabricant d'eclairage" videoUrl='https://www.youtube.com/embed/nsUGTCZU9aI' />
+                <Banner title="Fabricant D'éclairage" />
                 <SectionHeader>
                     <h2>Fabricant italien d’éclairage public routier et urbain</h2>
                 </SectionHeader>
