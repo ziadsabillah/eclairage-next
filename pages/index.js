@@ -28,7 +28,7 @@ export default function Home() {
     <Layout title="Eclairage Publiques - Template Matechso">
       <Hero />
       <Presentation />
-      {showcasedata.map((item, index) => (
+      {showcasedata?.map((item, index) => (
           <Showcase 
             key={index} side={index % 2} 
             titleOne={item.titleOne} titleTwo={item.titleTwo}
