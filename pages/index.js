@@ -36,7 +36,7 @@ export default function Home() {
             key={index} side={index % 2} 
             titleOne={item.titleOne} titleTwo={item.titleTwo}
             paragraph={item.paragraph} imgPath={item.imgPath}
-            href='/' />
+            href='/contact' />
       ))}
       
       <Services aboutData={aboutData} />
