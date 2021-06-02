@@ -4,6 +4,9 @@ import Presentation from '../components/Sections/Presentation'
 import Showcase from '../components/CategoryCard/Showcase'
 import Contact from '../components/Contact'
 
+import aboutData from '../data/services';
+import Services from '../components/Services'
+
 
 export default function Home() {
   const  showcasedata = [
@@ -35,6 +38,8 @@ export default function Home() {
             paragraph={item.paragraph} imgPath={item.imgPath}
             href='/' />
       ))}
+      
+      <Services aboutData={aboutData} />
       <Contact />
     </Layout>
   )
