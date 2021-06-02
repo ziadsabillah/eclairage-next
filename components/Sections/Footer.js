@@ -4,6 +4,7 @@ import AutoContainer from '../AutoContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
+
 import aboutData from '../../data/services';
 
 import contactInfo from '../../data/contactInfo';
@@ -215,7 +216,7 @@ const Footer = () => {
                         <a>
                             <img src="/icons/ico-mobile.png" alt />
                         </a>
-                        <a href="/"  style={{ marginTop: '6px', marginLeft: '6px' }}>Nous appeler</a>
+                        <a href={`tel:${contactInfo.phone[0]}`}  style={{ marginTop: '6px', marginLeft: '6px' }}>Nous appeler</a>
                         <img style={{ marginLeft: '40px' }} src="/icons/ico-mail.png" alt="Icon" />
                         <a href='/contact' style={{ marginTop: '6px', marginLeft: '6px'  }}>
                              Nous écrire 
