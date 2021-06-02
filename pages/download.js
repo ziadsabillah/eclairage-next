@@ -8,6 +8,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components';
 import DownlaodCard from '../components/CategoryCard/DownloadCard'
 
+import Contact from '../components/Contact'
+
 const CustomRow = styled(Row)`
     margin-top: 2em;
 `;
@@ -21,12 +23,13 @@ export default function DownloadPage() {
             <Container>
                 <CustomRow>
                     {download?.map((item) => (
-                        <Col sm={12} md={4}>
+                        <Col key={item.id} sm={12} md={4}>
                             <DownlaodCard title={item.title} imgUrl={item.imgUrl} description={item.description} />
                         </Col>
                     ))}
                 </CustomRow>
             </Container>
+            <Contact />
         </Layout>
             
 
