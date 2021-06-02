@@ -20,7 +20,8 @@ const NavbarContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    ${props => props.status === 'scrolling' ?
+
+    ${props => props.status === 'scrolling' || props.isMobile ?
         `  
         img {
             max-height: 38px !important;
@@ -48,7 +49,6 @@ const CustomNavbar = () => {
     let listener = null;
     useEffect(() => {
         checkScrolled()
-
     }, [])
 
     const checkScrolled = () => {
@@ -66,11 +66,10 @@ const CustomNavbar = () => {
 
     }
     const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile });
-    console.log(status);
     return (
         <>
 
-            <NavbarContainer status={status}>
+            <NavbarContainer status={status} isMobile={isMobile}>
                 <LeftSection>
                     <Logo></Logo>
                 </LeftSection>
