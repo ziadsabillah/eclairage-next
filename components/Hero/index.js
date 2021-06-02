@@ -60,12 +60,6 @@ export default function Hero() {
             button: "",
             href: '/',
             imgPath: '/slider/slider-1.jpeg',
-        }, {
-            title: '',
-            titleColor: "",
-            button: '',
-            href: '/',
-            imgPath: '/slider/slider-2.jpeg'
         }
     ]
 
