@@ -64,7 +64,7 @@ const NavLinks = () => {
 
                 <DetectActive href="/advantages" pageName="Avantages" />
 
-                <DetectActive href="/ref" pageName="References" />
+                {/* <DetectActive href="/ref" pageName="References" /> */}
 
                 <DetectActive href="/download" pageName="Telecharger" />
 
