@@ -1,27 +1,18 @@
-import EntryContent from "../components/EntryContent";
 import Layout from "../components/Layout";
 import { SectionHeader } from "../components/SectionHeader";
 import { Text } from '../components/General';
 import styled from 'styled-components';
 import Contact from '../components/Contact'
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import AutoContainer from "../components/AutoContainer";
-import AboutCard from "../components/CategoryCard/AboutCard";
-
-import { motion } from 'framer-motion';
-import { InView } from 'react-intersection-observer';
 import Banner from "../components/Banner";
+import Services from "../components/Services";
 
 
 const StyledText = styled(Text)`
     text-align: center;
     margin-bottom: 3em;
 `
-const CardSection = styled.div`
-    width: 100%;
-    background-color: #000;
-    z-index: -1999;
-`;
 
 
 export default function AboutPage() {
@@ -98,30 +89,7 @@ export default function AboutPage() {
                         </Col>
                     </Row>
                 </AutoContainer>
-                <InView threshold={0.15}>
-                    {({ ref, inView }) => (
-                        <motion.div ref={ref} initial={{ opacity: 0 }}
-                            animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                            transition={{ duration: 0.8 }}>
-                            <CardSection>
-
-                                <Container>
-                                    <Row>
-                                        {aboutData?.map((card) => (
-
-                                            <Col key={card.id} md={6} lg={6} sm={12}>
-                                                <AboutCard title={card.title} imgUrl={card.imgUrl} description={card.description} />
-                                            </Col>
-
-
-                                        ))}
-                                    </Row>
-                                </Container>
-                            </CardSection>
-                        </motion.div>
-                    )}
-                </InView>
-
+                <Services aboutData={aboutData} />
                 <Contact />
 
             </Layout>
