@@ -143,7 +143,7 @@ const ContentSide = ({ titleOne, titleTwo, paragraph, href }) => {
                             </p>
                         </Paragraph>
                         <ButtonWrapper>
-                            <Button href={href}>SAVOIR PLUS <FontAwesomeIcon icon={faArrowRight} className="icon"></FontAwesomeIcon></Button>
+                            <Button href={href}>Contact <FontAwesomeIcon icon={faArrowRight} className="icon"></FontAwesomeIcon></Button>
                         </ButtonWrapper>
                     </ContentWrapper>
                 </motion.div>
