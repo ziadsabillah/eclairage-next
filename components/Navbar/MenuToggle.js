@@ -4,6 +4,10 @@ import styled from "styled-components";
 const Button = styled.div`
   z-index: 99;
   cursor: pointer;
+
+  svg path {
+    stroke: #FFF;
+  }
 `;
 
 const Path = (props) => (

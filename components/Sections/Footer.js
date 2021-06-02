@@ -4,6 +4,10 @@ import AutoContainer from '../AutoContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
+import aboutData from '../../data/services';
+
+import contactInfo from '../../data/contactInfo';
+
 
 
 const MainFooter = styled.footer`
@@ -162,22 +166,11 @@ const Footer = () => {
                                         Services
                                     </LinksHeader>
                                     <List>
-                                        <li>
-                                            <a href="/">
-                                            Eclairage Urbain
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                            Eclairage Historique
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Projecteurs
-                                            </a>
-                                        </li>
-                                       
+                                        {aboutData?.map((service) => (
+                                            <li>
+                                                {service.title}
+                                            </li>
+                                        ))}
                                     </List>
                                 </LinksWidget>
                             </Col>
@@ -188,16 +181,15 @@ const Footer = () => {
                                     </LinksHeader>
                                     <List>
                                         <li>
-                                            Avenue Mohamed V
+                                            {contactInfo.address}
                                         </li>
+                                        {contactInfo.phone?.map((number) => (
+                                            <li>
+                                                {number}
+                                            </li>
+                                        )) }
                                         <li>
-                                            +212 XXXXXXXX
-                                        </li>
-                                        <li>
-                                            +212 5XXXXXXX
-                                        </li>
-                                        <li>
-                                            exemple@matechso.com
+                                            {contactInfo.contact}
                                         </li>
                                     </List>
                                 </LinksWidget>
