@@ -10,6 +10,12 @@ const Wrapper = styled.div`
     @media only screen and (min-width: 1350px) {
         padding: 54px 0;
     }
+
+    @media only screen and (max-width: 746px) {
+        padding: 2em 0;
+        text-align: center;
+        width: 100%;
+    }
     h1 {
         font-size: calc(36px + 1vw) !important;
         font-family: 'Roboto', sans-serif;
