@@ -58,7 +58,6 @@ const Paragraph = styled.div`
 const Presentation = () => {
 
     const isMobile = useMediaQuery({ maxWidth: DeviceSize.mobile })
-    const isTablet = useMediaQuery({ maxWidth: DeviceSize.tablet })
     return (
         <>
             <PresentationSection isMobile={isMobile}>
@@ -67,8 +66,8 @@ const Presentation = () => {
                         <Col sm={12} md={4}>
                             <InView threshold={0.65}>
                                 {({ ref, inView }) => (
-                                    <motion.div ref={ref} initial={{ opacity: 0, x: -50 }}
-                                        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                                    <motion.div ref={ref} initial={{ opacity: 0, x: isMobile ? 0 : -50 }}
+                                        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: isMobile ? 0 : -50 }}
                                         transition={{ duration: 0.8 }}>
                                         <Text isMobile={isMobile}>
                                             <h1 className="big">
@@ -86,8 +85,8 @@ const Presentation = () => {
                         <Col sm={12} md={8}>
                             <InView threshold={0.65}>
                                 {({ ref, inView }) => (
-                                    <motion.div ref={ref} initial={{ opacity: 0, x: 50 }}
-                                        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+                                    <motion.div ref={ref} initial={{ opacity: 0, x: isMobile ? 0 : 50 }}
+                                        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: isMobile ? 0 : 50 }}
                                         transition={{ duration: 0.8 }}>
                                         <Paragraph>
                                             <p>Après une longue histoire à succès, X change de nom pour marquer une nouvelle ère: [] est né.</p>

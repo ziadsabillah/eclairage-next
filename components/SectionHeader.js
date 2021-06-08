@@ -24,7 +24,7 @@ export const SectionHeader = styled.div`
         width: 40px;
         height: 2px;
         bottom: 8px;
-        background-color: #7BA700;
+        background-color: #E0DD00;
 
         @media only screen and (max-width: 600px) {
             display: none;
