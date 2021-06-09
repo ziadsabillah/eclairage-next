@@ -14,11 +14,11 @@ const CardSection = styled.div`
 const Services = ({ aboutData }) => {
     return (
         <>
-            <InView threshold={0.15}>
+            <InView threshold={0.11}>
                 {({ ref, inView }) => (
                     <motion.div ref={ref} initial={{ opacity: 0 }}
                         animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                        transition={{ duration: 0.8 }}>
+                        transition={{ duration: 0.3 }}>
 
 
                         <CardSection>
