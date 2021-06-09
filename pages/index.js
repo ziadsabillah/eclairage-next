@@ -9,7 +9,7 @@ import advantages from '../data/advantages'
 import Services from '../components/Services'
 import { addScaleCorrection } from 'framer-motion'
 import { SectionHeader } from '../components/SectionHeader'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 
 
 export default function Home() {
@@ -49,10 +49,9 @@ export default function Home() {
           <h2>Pourquoi nous choisir?</h2>
         </SectionHeader>
         <Row>
-          {advantages?.map(adv => (
-            <Col md={3}>
+          {advantages?.splice(0, 6).map(adv => (
+            <Col md={4}>
               <AdvantagesCard key={adv.id} title={adv.title} imgUrl={adv.imgUrl} description={adv.description} />
-
             </Col>
           ))}
         </Row>
