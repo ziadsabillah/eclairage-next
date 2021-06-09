@@ -61,14 +61,16 @@ const NavLinks = () => {
                 <DetectActive href="/" pageName="Accueil" />
                 
                 <DetectActive href="/about" pageName="Qui sommes-nous" />
+                
+                <DetectActive href="/download" pageName="Telecharger" />
 
                 <DetectActive href="/advantages" pageName="Avantages" />
 
-                {/* <DetectActive href="/ref" pageName="References" /> */}
+                <DetectActive href="/history" pageName="Histoire" />
 
-                <DetectActive href="/download" pageName="Telecharger" />
 
                 <DetectActive href="/contact" pageName="Contact" />
+
 
             </LinksWrapper>
         </NavLinkContainer>
