@@ -19,7 +19,7 @@ const aboutData = [
     },
     {
         id: 2,
-        title: 'Éclairage classique et décoratif',
+        title: 'Éclairage classique',
         imgUrl: 'img/category-4.jpeg',
         description: `Les solutions d’éclairage classiques de GMR ENLIGHTS combinent le design élégant de la tradition avec la plus haute qualité mécanique et d’éclairage. Notre offre s’étend des lanternes et des luminaires décoratifs aux poteaux, crosses et bornes en fonte : des éléments pour l’éclairage LED des centres historiques des villes et pour la mise en valeur esthétique des zones de valeur. Une gamme de produits au design raffiné et élégant qui respecte les règles de composition et les canons décoratifs des candélabres historiques des principales villes italiennes.`
     },

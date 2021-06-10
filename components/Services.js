@@ -30,11 +30,11 @@ const Services = ({ aboutData }) => {
                                         <img src="/icons/linea-txt.png" alt="Seperator" />
 
                                     </SectionHeader>
-
+                                    
                                     {aboutData?.map((card) => (
 
                                         <Col key={card.id} md={6} lg={6} sm={12}>
-                                            <AboutCard title={card.title} imgUrl={card.imgUrl} description={card.description} />
+                                            <AboutCard id={card.id} title={card.title} imgUrl={card.imgUrl} description={card.description} />
                                         </Col>
 
 
