@@ -18,19 +18,23 @@ const CustomAccordion = styled(Accordion)`
     button, button:hover, button:focus, button.active {
         text-decoration: none;
         color: grey;
+        padding: 1em;
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid lightgrey;
 
     }
 `
 
 const CustomCard = styled(Card)`
     border: none;
-    border-bottom: 1px solid lightgrey;
     margin-bottom: 10px;
 
     
     .card-header {
         background: #fff !important;
         border: none;
+
 
     }
    
@@ -48,13 +52,10 @@ const Faq = ({ data }) => {
                     <CustomAccordion defaultActiveKey="0">
                         {data?.map(item => (
                             <CustomCard>
-                                <Card.Header>
-                                    <Accordion.Toggle eventKey={item.id} as={Button} variant="link">
-                                        Q{item.id + '. ' +item.question}
+                                <Accordion.Toggle as={Card.Header} eventKey={item.id} as={Button} variant="link">
+                                    Q{item.id + '. ' + item.question}
+                                </Accordion.Toggle>
 
-                                    </Accordion.Toggle>
-
-                                </Card.Header>
                                 <Accordion.Collapse eventKey={item.id}>
                                     <Card.Body>{item.answer}</Card.Body>
                                 </Accordion.Collapse>

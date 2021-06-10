@@ -114,7 +114,7 @@ const AboutCard = ({ id, title, imgUrl, description }) => {
                         <GalleryText>
                             <GalleryTextInner>
                                 <CustomAccordion>
-                                    <Accordion.Toggle eventKey={id} onClick={handleAccordionClick}>
+                                    <Accordion.Toggle  eventKey={id} onClick={handleAccordionClick}>
                                         <h2>{title} <ArrowIcon isOpen={accordionIsOpen} color="white" size="30" />
                                         </h2>
                                     </Accordion.Toggle>
