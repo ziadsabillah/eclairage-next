@@ -10,6 +10,9 @@ import Services from '../components/Services'
 import { addScaleCorrection } from 'framer-motion'
 import { SectionHeader } from '../components/SectionHeader'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import Faq from '../components/Faq'
+
+import faq from '../data/faq'
 
 
 export default function Home() {
@@ -61,6 +64,7 @@ export default function Home() {
 
 
       <Services aboutData={aboutData} />
+      <Faq data={faq}  />
       <Contact />
     </Layout>
   )
