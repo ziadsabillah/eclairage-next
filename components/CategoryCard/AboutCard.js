@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components'
 
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
+import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import {InView} from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 
@@ -83,8 +84,8 @@ const ArrowIcon = ({ isOpen, color, size }) => {
     return (
         <>
             {isOpen ? (
-                <AiOutlineArrowUp color={color} size={size} />
-            ) : (<AiOutlineArrowDown color={color} size={size} />)}
+                <IoIosArrowDropup color={color} size={size} />
+            ) : (<IoIosArrowDropdown color={color} size={size} />)}
         </>
     )
 }
@@ -114,7 +115,7 @@ const AboutCard = ({ id, title, imgUrl, description }) => {
                             <GalleryTextInner>
                                 <CustomAccordion>
                                     <Accordion.Toggle eventKey={id} onClick={handleAccordionClick}>
-                                        <h2>{title} <ArrowIcon isOpen={accordionIsOpen} color="white" size="20" />
+                                        <h2>{title} <ArrowIcon isOpen={accordionIsOpen} color="white" size="30" />
                                         </h2>
                                     </Accordion.Toggle>
                                     <p>
