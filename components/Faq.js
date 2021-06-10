@@ -7,7 +7,8 @@ import { SectionHeader } from '../components/SectionHeader'
 const FAQSection = styled.div`
 
     position: relative;
-    padding: 81px 0;
+    padding: 31px 0;
+
 
 `;
 
@@ -22,20 +23,19 @@ const CustomAccordion = styled(Accordion)`
         border: none;
         box-shadow: none;
         border-bottom: 1px solid lightgrey;
+        
 
     }
 `
 
 const CustomCard = styled(Card)`
     border: none;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 5px 10px 0px;
 
     
     .card-header {
-        background: #fff !important;
         border: none;
-
-
     }
    
 `;
