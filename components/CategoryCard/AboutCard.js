@@ -1,5 +1,8 @@
 import { Accordion } from 'react-bootstrap';
+import { useState } from 'react';
 import styled from 'styled-components'
+
+import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
 
 
 
@@ -50,6 +53,10 @@ const GalleryTextInner = styled.div`
         margin-top: 34px;
         padding-bottom: 10px;
         font-weight: 500;
+
+        svg {
+            margin-left: 1em;
+        }
     }
     p {
         font-weight: 400;
@@ -66,10 +73,27 @@ const CustomAccordion = styled(Accordion)`
 `
 
 
+const ArrowIcon = ({isOpen, color, size}) => {
+    return (
+        <>
+        {isOpen ? (
+            <AiOutlineArrowUp color={color} size={size} />
+        ) : ( <AiOutlineArrowDown color={color} size={size} />)}
+        </>
+    )
+}
 
 
 
-const AboutCard = ({id, title, imgUrl, description }) => {
+const AboutCard = ({ id, title, imgUrl, description }) => {
+
+    const [accordionIsOpen, setAccordionIsOpen] = useState(false);
+
+    const handleAccordionClick = () => {
+        setAccordionIsOpen(!accordionIsOpen);
+    }
+
+
     return (
         <>
             <GalleryImage>
@@ -80,9 +104,9 @@ const AboutCard = ({id, title, imgUrl, description }) => {
             <GalleryText>
                 <GalleryTextInner>
                     <CustomAccordion>
-                        <Accordion.Toggle eventKey={id}>
-                            <h2>{title}</h2>
-                            
+                        <Accordion.Toggle eventKey={id} onClick={handleAccordionClick}>
+                            <h2>{title} <ArrowIcon isOpen={accordionIsOpen} color="white" size="20" />
+                            </h2>
                         </Accordion.Toggle>
                         <p>
                             <img src="/icons/linea-txt.png" alt="Seperator" />
