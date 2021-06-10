@@ -1,5 +1,4 @@
 import { Accordion, Container, Card, Button } from 'react-bootstrap';
-import { AiOutlineArrowDown } from 'react-icons/ai';
 import styled from 'styled-components';
 import { SectionHeader } from '../components/SectionHeader'
 
