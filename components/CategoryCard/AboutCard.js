@@ -1,4 +1,6 @@
+import { Accordion } from 'react-bootstrap';
 import styled from 'styled-components'
+
 
 
 const GalleryImage = styled.div`
@@ -18,7 +20,7 @@ const GalleryItem = styled.div`
     list-style: none !important;
 
     img {
-        width: 100%;
+        width: 80%;
         height: auto;
         vertical-align: baseline;
         font-size: 100%;
@@ -56,10 +58,18 @@ const GalleryTextInner = styled.div`
 `;
 
 
+const CustomAccordion = styled(Accordion)`
+    button {
+        color: #fff !important;
+        background: none !important;
+    }
+`
 
 
 
-const AboutCard = ({ title, imgUrl, description }) => {
+
+
+const AboutCard = ({id, title, imgUrl, description }) => {
     return (
         <>
             <GalleryImage>
@@ -69,13 +79,22 @@ const AboutCard = ({ title, imgUrl, description }) => {
             </GalleryImage>
             <GalleryText>
                 <GalleryTextInner>
-                    <h2>{title}</h2>
-                    <p>
-                        <img src="/icons/linea-txt.png" alt="Seperator" />
-                    </p>
-                    <p>
-                        {description}
-                    </p>
+                    <CustomAccordion>
+                        <Accordion.Toggle eventKey={id}>
+                            <h2>{title}</h2>
+                            
+                        </Accordion.Toggle>
+                        <p>
+                            <img src="/icons/linea-txt.png" alt="Seperator" />
+                        </p>
+                        <Accordion.Collapse eventKey={id}>
+                            <p>
+                                {description}
+                            </p>
+                        </Accordion.Collapse>
+
+                    </CustomAccordion>
+
                 </GalleryTextInner>
             </GalleryText>
 
