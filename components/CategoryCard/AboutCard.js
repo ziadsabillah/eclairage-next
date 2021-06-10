@@ -3,6 +3,8 @@ import { useState } from 'react';
 import styled from 'styled-components'
 
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
+import {InView} from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 
 
@@ -27,6 +29,10 @@ const GalleryItem = styled.div`
         height: auto;
         vertical-align: baseline;
         font-size: 100%;
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
     }
 `;
 
@@ -73,12 +79,12 @@ const CustomAccordion = styled(Accordion)`
 `
 
 
-const ArrowIcon = ({isOpen, color, size}) => {
+const ArrowIcon = ({ isOpen, color, size }) => {
     return (
         <>
-        {isOpen ? (
-            <AiOutlineArrowUp color={color} size={size} />
-        ) : ( <AiOutlineArrowDown color={color} size={size} />)}
+            {isOpen ? (
+                <AiOutlineArrowUp color={color} size={size} />
+            ) : (<AiOutlineArrowDown color={color} size={size} />)}
         </>
     )
 }
@@ -96,31 +102,38 @@ const AboutCard = ({ id, title, imgUrl, description }) => {
 
     return (
         <>
-            <GalleryImage>
-                <GalleryItem>
-                    <img src={imgUrl} />
-                </GalleryItem>
-            </GalleryImage>
-            <GalleryText>
-                <GalleryTextInner>
-                    <CustomAccordion>
-                        <Accordion.Toggle eventKey={id} onClick={handleAccordionClick}>
-                            <h2>{title} <ArrowIcon isOpen={accordionIsOpen} color="white" size="20" />
-                            </h2>
-                        </Accordion.Toggle>
-                        <p>
-                            <img src="/icons/linea-txt.png" alt="Seperator" />
-                        </p>
-                        <Accordion.Collapse eventKey={id}>
-                            <p>
-                                {description}
-                            </p>
-                        </Accordion.Collapse>
+            <InView threshold="0.11">
+                {({ ref, inView }) => (
+                    <motion.div ref={ref} initial={{ scale: .7 }} animate={inView ? {  scale: 1 } : { scale: .7, opacity: 0}} transition={{ duration: 0.8 }}>
+                        <GalleryImage>
+                            <GalleryItem>
+                                <img src={imgUrl} />
+                            </GalleryItem>
+                        </GalleryImage>
+                        <GalleryText>
+                            <GalleryTextInner>
+                                <CustomAccordion>
+                                    <Accordion.Toggle eventKey={id} onClick={handleAccordionClick}>
+                                        <h2>{title} <ArrowIcon isOpen={accordionIsOpen} color="white" size="20" />
+                                        </h2>
+                                    </Accordion.Toggle>
+                                    <p>
+                                        <img src="/icons/linea-txt.png" alt="Seperator" />
+                                    </p>
+                                    <Accordion.Collapse eventKey={id}>
+                                        <p>
+                                            {description}
+                                        </p>
+                                    </Accordion.Collapse>
 
-                    </CustomAccordion>
+                                </CustomAccordion>
 
-                </GalleryTextInner>
-            </GalleryText>
+                            </GalleryTextInner>
+                        </GalleryText>
+
+                    </motion.div>
+                )}
+            </InView>
 
         </>
     )
