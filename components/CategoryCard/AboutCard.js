@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components'
 
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai';
-import InView from 'react-intersection-observer';
+import {InView} from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 
 

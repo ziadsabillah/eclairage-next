@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { InView } from 'react-intersection-observer';
+// import { motion } from 'framer-motion';
+// import { InView } from 'react-intersection-observer';
 import AboutCard from "../components/CategoryCard/AboutCard";
 import { Row, Col, Container } from "react-bootstrap";
 import styled from 'styled-components';
@@ -26,12 +26,9 @@ const Services = ({ aboutData }) => {
                                     </SectionHeader>
                                     
                                     {aboutData?.map((card) => (
-
                                         <Col key={card.id} md={6} lg={6} sm={12}>
                                             <AboutCard id={card.id} title={card.title} imgUrl={card.imgUrl} description={card.description} />
                                         </Col>
-
-
                                     ))}
                                 </Row>
                             </Container>
